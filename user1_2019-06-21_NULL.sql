@@ -1,0 +1,35 @@
+--user1으로 접속한 화면
+
+CREATE TABLE tbl_user(
+.4545
+
+u_name nVARCHAR2(30),
+u_tel nVARCHAR2(20),
+u_addr nVARCHAR2(125)
+);
+
+INSERT INTO TBL_USER(U_NAME, U_TEL, U_ADDR)
+VALUES('홍길동','001','서울특별시');
+
+INSERT INTO TBL_USER(U_NAME)
+VALUES('성춘향');
+
+INSERT INTO TBL_USER(U_NAME, U_ADDR)
+VALUES('이몽룡','한양');
+
+INSERT INTO tbl_user(U_TEL,U_ADDR)
+VALUES('002','광주광역시');
+
+
+SELECT *FROM TBL_USER;
+
+SELECT * FROM TBL_USER
+WHERE U_NAME = '이몽룡';
+
+--TBL_USER 테이블에 저장된 값들 중에서 U_NAME 칼럼이 NULL인 리스트만 보여줘라
+SELECT * FROM TBL_USER
+WHERE U_NAME IS NULL;
+
+--반대 경우
+SELECT * FROM TBL_USER
+WHERE U_NAME IS NOT NULL;

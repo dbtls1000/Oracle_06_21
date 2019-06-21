@@ -26,11 +26,62 @@ WHERE d_obj# = 1299;
 CREATE TABLE tbl_student (
     st_name nVARCHAR2(30), -- 데이터의 필드, 멤버변수 역할 DB에서는 칼럼이라고 부른다.
     st_age NUMBER
-    )
+ );
     
+--CRUD 키워드는
+--기본 키워드와 보조 키워드가 있는데
+--기본 키워드에 따라 보조키워드가 필수적으로 따라 다녀야 하는 경우가 있다.
+--INSERT INTO VALUES
+--SELECT FROM WHERE
+--UPDATE SET WHERE
+--DELETE FROM WHERE
+
 INSERT INTO tbl_student(st_name,st_age)
 VALUES('홍길동',33);
 
-    
+INSERT INTO tbl_student(st_name,st_age)
+VALUES('성춘향',16);
 
-    
+INSERT INTO tbl_student(st_name,st_age)
+VALUES('이몽룡',22);
+
+SELECT * FROM tbl_student;
+
+SELECT * FROM tbl_student
+WHERE st_name = '성춘향';
+
+SELECT * FROM tbl_student
+WHERE st_age = 16;
+
+SELECT *
+FROM tbl_student
+WHERE st_age = 16;
+
+--매우 조심해서 연습할 키워드
+--UPDATE와 DELETE
+--UPDATE와 DELETE 키워드에서 WHERE 절은 선택사항이지만
+--필수키워드라고 생각하는게 좋다.
+UPDATE tbl_student
+SET st_age = 100
+WHERE ST_NAME = '이몽룡';
+
+SELECT * FROM tbl_student;
+
+DELETE FROM tbl_student
+WHERE ST_NAME = '김길동';
+-----------------
+--CRUD 표준명령어
+-----------------
+-- CREATE
+INSERT INTO 테이블명(칼럼리스트)
+VALUES(데이터리스트);
+--READ
+SELECT * FROM 테이블명
+WHERE 칼럼 = 조건;
+--UPDATE
+UPDATE 테이블명
+SET 칼럼1 =값 , 칼럼2 = 값
+WHERE 칼럼 = 조건;
+--DELETE
+DELETE FROM 테이블명
+WHERE 칼럼 = 조건;
