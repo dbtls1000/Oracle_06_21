@@ -1,0 +1,5 @@
+--this is 관리자
+
+CREATE TABLESPACE user6TS
+DATAFILE 'C:/bizwork/myDB.user6TS.dbf'
+SIZE 100M AUTOEXTEND ON NEXT 100K;
